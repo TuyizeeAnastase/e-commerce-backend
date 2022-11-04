@@ -1,6 +1,9 @@
 import express from "express";
 import userController from "../controllers/user.controller";
-import { userValidation } from "../validations/user.validations";
+import {
+  userValidation,
+  loginValidation,
+} from "../validations/user.validations";
 import {
   checkUserExistByPhone,
   checkUserExist,
@@ -14,6 +17,7 @@ router.post(
   checkUserExistByPhone,
   userController.registerUser
 );
-router.post("/login", userValidation, checkUserExist, userController.login);
+router.post("/login", loginValidation, checkUserExist, userController.login);
+router.get("/", userController.getAllUSers);
 
 export default router;

@@ -1,4 +1,4 @@
-import { createUser } from "../services/user.services";
+import { createUser,getUSers } from "../services/user.services";
 import bcrypt from "bcryptjs";
 import { getRole } from "../services/role.services";
 import { getToken } from "../util/token";
@@ -6,6 +6,11 @@ import { getToken } from "../util/token";
 export class userControllers {
   async registerUser(req, res) {
     try {
+      if(req.body.password != req.body.confirm_password){
+        return res.status(500).json({
+          message: "Confirm password is different with password",
+        });
+      }
       const password = await bcrypt.hash(req.body.password, 12);
       const role = await getRole();
       const newUser = {
@@ -55,6 +60,21 @@ export class userControllers {
       });
     }
   }
+
+  async getAllUSers(req,res){
+    try{
+      const users=await getUSers()
+    return res.status(201).json({
+      users
+    })
+    }catch(err){
+      return res.status(500).json({
+        message:"Error while retrieving users",
+        error:err.message
+      })
+    }
+  }
+
 }
 
 const userController = new userControllers();

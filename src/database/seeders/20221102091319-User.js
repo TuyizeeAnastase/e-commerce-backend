@@ -31,6 +31,16 @@ module.exports = {
       is_active:true,
       createdAt: new Date(),
       updatedAt: new Date(),
+    },
+    {
+      full_name:"anastase",
+      email:"ana@gmail.com",
+      password:"$2a$12$GXXRXhI2G7bQrHW44XzTcOXoOTAv7tgGKPKffSC606XuKoOmOc4My",
+      roleId:2,
+      phone_number:"+250787454555",
+      is_active:true,
+      createdAt: new Date(),
+      updatedAt: new Date(),
     }
    ])
   },

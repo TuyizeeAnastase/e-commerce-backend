@@ -16,8 +16,23 @@ module.exports = (sequelize, DataTypes) => {
   );
   User.associate = function (models) {
     User.belongsTo(models.Role, {
-      foreignKey:"roleId",
+      foreignKey: "roleId",
       as: "role",
+      onDelete: "CASCADE",
+    });
+    User.hasOne(models.Cart, {
+      foreignKey: "user_id",
+      as: "user",
+      onDelete: "CASCADE",
+    });
+    User.hasOne(models.Order, {
+      foreignKey: "user_id",
+      as: "order_user",
+      onDelete: "CASCADE",
+    });
+    User.hasOne(models.CartItem, {
+      foreignKey: "user_id",
+      as: "users",
       onDelete: "CASCADE",
     });
   };
