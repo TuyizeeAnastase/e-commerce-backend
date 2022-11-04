@@ -14,4 +14,12 @@ describe("STARTER TEST", () => {
         done();
     });
   });
+  it("Should return page not found",(done)=>{
+    request(app)
+    .get("/test")
+    .end((err,res)=>{
+      expect(res.statusCode).to.equal(404);
+      done();
+    })
+  })
 });

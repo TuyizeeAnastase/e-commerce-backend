@@ -11,6 +11,6 @@ export const getToken = (params) => {
 };
 
 export const decoding = (token) => {
-  const payload = jwt.verify(token, process.env.SECRET_KEY || "loginTokenKEy");
+  const payload = jwt.verify(token, process.env.SECRET_KEY || "loginTokenKey");
   return payload;
 };
