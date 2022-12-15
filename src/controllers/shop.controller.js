@@ -1,4 +1,4 @@
-import { getAllShops } from "../services/shop.service.js";
+import { getAllShops } from "../services/shop.service";
 
 export class shopsControllers{
     async getShops(req,res){

@@ -1,13 +1,13 @@
 import express from "express";
-import userController from "../controllers/user.controller.js";
+import userController from "../controllers/user.controller";
 import {
   userValidation,
   loginValidation,
-} from "../validations/user.validations.js";
+} from "../validations/user.validations";
 import {
   checkUserExistByPhone,
   checkUserExist,
-} from "../middleware/user.middleware.js";
+} from "../middleware/user.middleware";
 
 const router = express();
 

@@ -1,13 +1,13 @@
 import express from "express";
-import productController from "../controllers/product.controller.js";
-import { productValidation } from "../validations/product.validations.js";
+import productController from "../controllers/product.controller";
+import { productValidation } from "../validations/product.validations";
 import {
   checkProductExist,
   checkImageFormat,
   checkShopExist,
   uploadImage,
   checkProductExistById,
-} from "../middleware/product.middleware.js";
+} from "../middleware/product.middleware";
 
 const router = express.Router();
 

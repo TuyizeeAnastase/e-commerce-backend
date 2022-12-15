@@ -1,11 +1,11 @@
 import express from "express";
-import cartController from "../controllers/cart.controllers.js";
-import { protect, restrictTo } from "../middleware/protect.middleware.js";
-import { cartValidation } from "../validations/cart.validations.js";
+import cartController from "../controllers/cart.controllers";
+import { protect, restrictTo } from "../middleware/protect.middleware";
+import { cartValidation } from "../validations/cart.validations";
 import {
   checkProductsExist,
   checCartExist,
-} from "../middleware/cart.middleware.js";
+} from "../middleware/cart.middleware";
 
 const router = express.Router();
 

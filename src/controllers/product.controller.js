@@ -7,7 +7,7 @@ import {
   getProductByCategory,
   getServices,
   deleteProduct
-} from "../services/product.services.js";
+} from "../services/product.services";
 
 export class productControllers {
   async getProducts(req, res) {

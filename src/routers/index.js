@@ -1,8 +1,8 @@
 import express from "express";
-import userRouters from "./user.route.js";
-import productRouters from "./product.route.js";
-import shopsRouters from "./shops.routers.js";
-import cartRouters from "./cart.routers.js";
+import userRouters from "./user.route";
+import productRouters from "./product.route";
+import shopsRouters from "./shops.routers";
+import cartRouters from "./cart.routers";
 
 const routes = express();
 

@@ -3,13 +3,13 @@ import {
   addCart,
   getCartByUser,
   updateCart,
-} from "../services/cart.services.js";
+} from "../services/cart.services";
 import {
   addCartItem,
   getItemByCartId,
   getCartByProductId,
   updateItem,
-} from "../services/cart_item.services.js";
+} from "../services/cart_item.services";
 
 export class cartControllers {
   async getCarts(req, res) {
