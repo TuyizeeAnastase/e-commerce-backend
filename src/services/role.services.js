@@ -1,4 +1,4 @@
-import { Role } from "../database/models";
+import { Role } from "../database/models.js";
 
 export const getRole =async () => {
   const role = Role.findOne({

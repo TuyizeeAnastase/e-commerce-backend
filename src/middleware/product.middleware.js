@@ -1,4 +1,4 @@
-import { Product, Shop } from "../database/models";
+import { Product, Shop } from "../database/models.js";
 import cloadinary from "cloudinary";
 
 export const checkProductExist = async (req, res, next) => {

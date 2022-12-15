@@ -1,4 +1,4 @@
-import { Product, Shop } from "../database/models";
+import { Product, Shop } from "../database/models.js";
 import { Op } from "sequelize";
 
 export const getAllProducts = async () => {

@@ -1,4 +1,4 @@
-import { CartItem, Product } from "../database/models";
+import { CartItem, Product } from "../database/models.js";
 import { Op } from "sequelize";
 
 export const addCartItem = async (item) => {
