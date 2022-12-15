@@ -1,5 +1,5 @@
 import { decoding } from "../util/token";
-import { getUserById } from "../services/user.services";
+import { getUserById } from "../services/user.services.js";
 
 export const protect = async (req, res, next) => {
   let token;
