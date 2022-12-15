@@ -3,6 +3,7 @@ module.exports = (sequelize, DataTypes) => {
     "Cart",
     {
       user_id: DataTypes.INTEGER,
+      total:DataTypes.INTEGER
     },
     {}
   );

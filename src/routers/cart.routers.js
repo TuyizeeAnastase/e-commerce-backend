@@ -20,6 +20,6 @@ router
     cartController.createCart
   );
 
-// router.route("/:id").get(cartController.getCartByUser);
+
 
 export default router;

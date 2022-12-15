@@ -6,6 +6,7 @@ module.exports = (sequelize, DataTypes) => {
       quantity: DataTypes.INTEGER,
       cart_id: DataTypes.ARRAY(DataTypes.INTEGER),
       user_id: DataTypes.ARRAY(DataTypes.INTEGER),
+      total:DataTypes.INTEGER
     },
     {}
   );

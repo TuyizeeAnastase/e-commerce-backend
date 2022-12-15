@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/app.js",
-  "type": "module" ,
   "scripts": {
     "build": "babel src --out-dir dist --source-maps inline --copy-files",
     "dev": "better-npm-run dev",

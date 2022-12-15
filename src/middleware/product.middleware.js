@@ -62,6 +62,7 @@ export const checkImageFormat = (...extensions) => {
   return (req, res, next) => {
     if (req.results) {
       const results = req.results;
+      console.log(results)
       if (!extensions.includes(results.format.toLowerCase())) {
         return res.status(405).json({
           message: `Only ${extensions} format is allowed`,

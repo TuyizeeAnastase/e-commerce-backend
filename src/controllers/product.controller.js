@@ -89,7 +89,7 @@ export class productControllers {
     try {
       const product = req.product;
       const data = req.body;
-      await updateProduct({ data }, product.id);
+      await updateProduct( data , product.id);
       return res.status(200).json({
         product: { id: product.id, ...req.body },
       });

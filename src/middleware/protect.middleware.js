@@ -15,6 +15,7 @@ export const protect = async (req, res, next) => {
     const decoded = await decoding(token);
     const user = await getUserById(decoded.id);
     req.user = user;
+    console.log(user)
     req.loggedUSer = user;
     next();
   } catch (err) {

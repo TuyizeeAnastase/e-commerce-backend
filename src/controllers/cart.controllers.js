@@ -27,6 +27,7 @@ export class cartControllers {
   }
   async createCart(req, res) {
     const loggedUSer = req.loggedUSer;
+    const product = req.products;
     const cart = req.cart;
     let newCart;
     let itemAdded;
@@ -39,6 +40,7 @@ export class cartControllers {
       quantity: req.body.quantity,
       user_id: [loggedUSer.id],
       product_id: JSON.parse(req.body.products_id),
+      total: parseInt(product.price) * parseInt(req.body.quantity),
     };
     if (req.cartExist == "false") {
       itemAdded = await addCartItem(item);
@@ -53,12 +55,16 @@ export class cartControllers {
           quantity: req.body.quantity,
           user_id: [loggedUSer.id],
           product_id: JSON.parse(req.body.products_id),
+          total: parseInt(product.price) * parseInt(req.body.quantity),
         });
       } else {
         newCart = await updateItem(
           {
             quantity:
               parseInt(req.body.quantity) + parseInt(checkItem.quantity),
+            total:
+              parseInt(product.price) *
+              (parseInt(req.body.quantity) + parseInt(checkItem.quantity)),
           },
           checkItem.id
         );
@@ -79,7 +85,7 @@ export class cartControllers {
 
   async getCartByUser(req, res) {
     try {
-      const  id  = req.loggedUSer.id;
+      const id = req.loggedUSer.id;
       const carts = await getCartByUser(id);
       if (!carts) {
         return res.status(404).json({

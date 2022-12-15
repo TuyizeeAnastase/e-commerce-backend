@@ -2,6 +2,7 @@ import { Product, Cart } from "../database/models";
 
 export const checkProductsExist = async (req, res, next) => {
   const products_id = JSON.parse(req.body.products_id);
+  const { quantity } = req.body;
   const products = await Product.findOne({
     where: {
       id: products_id,
@@ -11,9 +12,16 @@ export const checkProductsExist = async (req, res, next) => {
     return res.status(404).json({
       message: `Product  doesn't exist, contact admin for support`,
     });
+  } else {
+    console.log(quantity,products.quantity)
+    if (quantity > products.quantity) {
+      return res.status(404).json({
+        message: `Only ${products.quantity} available on stock`,
+      });
+    }
+    req.products = products;
+    next();
   }
-  req.products = products;
-  next();
 };
 
 export const checCartExist = async (req, res, next) => {
