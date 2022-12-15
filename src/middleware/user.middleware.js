@@ -1,4 +1,4 @@
-import { User, Role } from "../database/models.js";
+import { User, Role } from "../database/models";
 import { Op } from "sequelize";
 
 export const checkUserExistByPhone = async (req, res, next) => {

@@ -1,4 +1,4 @@
-import { Cart, Product, User, CartItem } from "../database/models.js";
+import { Cart, Product, User, CartItem } from "../database/models";
 
 export const getAllCart = async () => {
   return await Cart.findAll({

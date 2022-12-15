@@ -1,4 +1,4 @@
-import { Product, Cart } from "../database/models.js";
+import { Product, Cart } from "../database/models";
 
 export const checkProductsExist = async (req, res, next) => {
   const products_id = JSON.parse(req.body.products_id);
