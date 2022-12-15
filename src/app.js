@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import bodyParser from "body-parser";
 import morgan from "morgan";
-import routes from "./routers/index.js";
+import routes from "./routers/index";
 import fileupload from "express-fileupload";
 import cloadinary from 'cloudinary'
 

@@ -15,7 +15,7 @@ module.exports = {
     {
       name:"tanker shop",
       summary:"this is tanker shop description",
-      image:"https://res.cloudinary.com/depljf8uc/image/upload/v1670928883/tanks_wiifzu.png",
+      image:"https://res.cloudinary.com/depljf8uc/image/upload/v1674567218/tanks_wuow5j.png",
       is_active:true,
       createdAt:new Date(),
       updatedAt:new Date(),
@@ -23,7 +23,7 @@ module.exports = {
     {
       name:"Industrial tools & equipment",
       summary:"this is industrial tools and equipment  shop description",
-      image:"https://res.cloudinary.com/depljf8uc/image/upload/v1668441689/pexels-suntorn-somtong-1029243_qgtbvn.jpg",
+      image:"https://res.cloudinary.com/depljf8uc/image/upload/v1674567401/Construction-Machinery-and-Equipment-Industrial-Equipment-Centre_jyulwo.jpg",
       is_active:true,
       createdAt:new Date(),
       updatedAt:new Date(),
@@ -31,7 +31,7 @@ module.exports = {
     {
       name:"Maintainance",
       summary:"this is Maintainance shop description",
-      image:"https://res.cloudinary.com/depljf8uc/image/upload/v1668441684/pexels-bidvine-1249611_hsmphb.jpg",
+      image:"https://res.cloudinary.com/duhetxdbs/image/upload/v1674923244/maintainance_exleuk.jpg",
       is_active:true,
       createdAt:new Date(),
       updatedAt:new Date(),

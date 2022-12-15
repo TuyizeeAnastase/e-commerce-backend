@@ -6,6 +6,7 @@ module.exports = (sequelize, DataTypes) => {
       quantity: DataTypes.INTEGER,
       cart_id: DataTypes.ARRAY(DataTypes.INTEGER),
       user_id: DataTypes.ARRAY(DataTypes.INTEGER),
+      total: DataTypes.INTEGER,
     },
     {}
   );
@@ -20,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
       as: "products",
       onDelete: "CASCADE",
     });
-    CartItem.belongsTo(models.Product, {
+    CartItem.belongsTo(models.User, {
       foreignKey: "user_id",
       as: "users",
       onDelete: "CASCADE",

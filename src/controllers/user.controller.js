@@ -51,6 +51,7 @@ export class userControllers {
           email: user.email,
           phone_number: user.phone_number,
           role: user.role.title,
+          created:user.createdAt
         },
       });
     } catch (error) {

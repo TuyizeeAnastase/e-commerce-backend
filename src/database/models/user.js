@@ -25,14 +25,24 @@ module.exports = (sequelize, DataTypes) => {
       as: "user",
       onDelete: "CASCADE",
     });
-    User.hasOne(models.Order, {
+    User.hasOne(models.CartItem, {
+      foreignKey: "user_id",
+      as: "users",
+      onDelete: "CASCADE",
+    });
+    User.hasMany(models.Order, {
       foreignKey: "user_id",
       as: "order_user",
       onDelete: "CASCADE",
     });
-    User.hasOne(models.CartItem, {
+    User.hasOne(models.OrderItem, {
       foreignKey: "user_id",
-      as: "users",
+      as: "order_user_item",
+      onDelete: "CASCADE",
+    });
+    User.hasOne(models.Booking, {
+      foreignKey: "user_id",
+      as: "booked_user",
       onDelete: "CASCADE",
     });
   };

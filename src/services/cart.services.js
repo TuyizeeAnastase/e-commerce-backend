@@ -1,4 +1,4 @@
-import { Cart, Product, User, CartItem } from "../database/models";
+import { Cart, User } from "../database/models";
 
 export const getAllCart = async () => {
   return await Cart.findAll({
@@ -16,15 +16,15 @@ export const addCart = async (cart) => {
 };
 
 export const updateCart = async (update, id) => {
-  try{
+  try {
     const cart = await Cart.update(update, {
-    where: {
-      id,
-    },
-  });
-  return cart;
-  }catch(err){
-    console.log(err)
+      where: {
+        id,
+      },
+    });
+    return cart;
+  } catch (err) {
+    console.log(err);
   }
 };
 
@@ -45,4 +45,3 @@ export const getCartByUser = async (id) => {
   });
   return cart;
 };
-

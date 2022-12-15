@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/app.js",
-  "type": "module" ,
   "scripts": {
     "build": "babel src --out-dir dist --source-maps inline --copy-files",
     "dev": "better-npm-run dev",
@@ -19,7 +18,7 @@
       "command": "nodemon --exec npx babel-node src/app.js",
       "env": {
         "NODE_ENV": "development",
-        "PORT": 4000
+        "PORT": 4500
       }
     },
     "test": {
@@ -70,7 +69,8 @@
     "regenerator-runtime": "^0.13.10",
     "sequelize": "^6.25.3",
     "sequelize-cli": "^6.5.2",
-    "supertest": "^6.3.1"
+    "supertest": "^6.3.1",
+    "twilio": "^3.84.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.19.3",

@@ -43,17 +43,25 @@ export const uploadImage = async (req, res, next) => {
     return res.status(401).json({
       message: "Please upload product image",
     });
-  } else {
-    const file = req.files.images;
-    cloadinary.uploader.upload(file.tempFilePath, async (results, err) => {
-      if (err) {
-        res.status(500).json({
-          message: "Unable to upload image",
-          error: err,
-        });
-      }
-      req.results = results;
-      next();
+  }
+  try {
+    {
+      const file = req.files.images;
+      cloadinary.uploader.upload(file.tempFilePath, async (results, err) => {
+        if (err) {
+          res.status(500).json({
+            message: "Unable to upload image",
+            error: err,
+          });
+        }
+        req.results = results;
+        next();
+      });
+    }
+  } catch (error) {
+    return res.status(500).json({
+      message: "Unable to upload image",
+      error: error.message,
     });
   }
 };
